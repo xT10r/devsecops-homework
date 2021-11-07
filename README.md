@@ -13,6 +13,7 @@
 3. Склонируйте репозиторий с примерами уязвимых программ
 
     git clone https://github.com/sdukshis/devsecops-homework.git
+    cd devsecops-homework
 4. С помощью code review, статического и динамического анализа найдите все уязвимости в директории src
 
     Используйте примеры и задания с вебинара
