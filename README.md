@@ -12,7 +12,7 @@
     docker run --rm -ti sdukshis/devsecops_homework
 3. Склонируйте репозиторий с примерами уязвимых программ
 
-    git https://github.com/sdukshis/devsecops-homework.git
+    git clone https://github.com/sdukshis/devsecops-homework.git
 4. С помощью code review, статического и динамического анализа найдите все уязвимости в директории src
 
     Используйте примеры и задания с вебинара
