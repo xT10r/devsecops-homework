@@ -13,7 +13,6 @@ jobs:
           fetch-depth: 0
       - uses: deep5050/cppcheck-action@main
         with:
-          path: ./src/
           github_token: ${{ secrets.MY_GITHUB_TOKEN}}
           output_file: report-cppcheck.xml
       - uses: mikeal/publish-to-github-action@master
