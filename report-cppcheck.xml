@@ -1,0 +1,50 @@
+src/board.c:38:3: error: Memory leak: board [memleak]
+  return 0;
+  ^
+src/board.c:36:9: style: Variable 'board' is assigned a value that is never used. [unreadVariable]
+  board = (board_square_t *)malloc(m * n * sizeof(board_square_t));
+        ^
+src/free.c:8:5: error: Memory pointed to by 'ptr' is freed twice. [doubleFree]
+    free(ptr);
+    ^
+src/free.c:6:9: note: Memory pointed to by 'ptr' is freed twice.
+        free(ptr);
+        ^
+src/free.c:8:5: note: Memory pointed to by 'ptr' is freed twice.
+    free(ptr);
+    ^
+src/html.c:36:3: error: Return value of allocation function 'copy_input' is not stored. [leakReturnValNotUsed]
+  copy_input(benevolent_string);
+  ^
+src/html.c:38:3: error: Return value of allocation function 'copy_input' is not stored. [leakReturnValNotUsed]
+  copy_input(malicious_string);
+  ^
+src/packet.c:18:13: style: Condition 'nresp>0' is always true [knownConditionTrueFalse]
+  if (nresp > 0) {
+            ^
+src/packet.c:17:32: note: Assignment 'nresp=packet_get_int_ok()', assigned value is 123456
+  int nresp = packet_get_int_ok();
+                               ^
+src/packet.c:18:13: note: Condition 'nresp>0' is always true
+  if (nresp > 0) {
+            ^
+src/packet.c:25:13: style: Condition 'nresp>0' is always false [knownConditionTrueFalse]
+  if (nresp > 0) {
+            ^
+src/packet.c:24:33: note: Assignment 'nresp=packet_get_int_problem()', assigned value is -811160064
+  nresp = packet_get_int_problem();
+                                ^
+src/packet.c:25:13: note: Condition 'nresp>0' is always false
+  if (nresp > 0) {
+            ^
+src/packet.c:29:3: error: Memory pointed to by 'response' is freed twice. [doubleFree]
+  free(response);
+  ^
+src/packet.c:22:3: note: Memory pointed to by 'response' is freed twice.
+  free(response);
+  ^
+src/packet.c:29:3: note: Memory pointed to by 'response' is freed twice.
+  free(response);
+  ^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+
