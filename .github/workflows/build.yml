@@ -24,6 +24,7 @@ jobs:
         with:
           projectBaseDir: src
           args: >
+            -X
             -Dsonar.cxx.cppcheck.reportPaths=report-cppcheck.xml
             -Dsonar.verbose=true        
         env:
