@@ -21,13 +21,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
           BRANCH_NAME: 'main'
       - uses: sonarsource/sonarqube-scan-action@master
+        with:
+          projectBaseDir: src
+          args: >
+            -Dsonar.cxx.cppcheck.reportPaths=report-cppcheck.xml
+            -Dsonar.verbose=true        
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      # If you wish to fail your job when the Quality Gate is red, uncomment the
-      # following lines. This would typically be used to fail a deployment.
-      - uses: sonarsource/sonarqube-quality-gate-action@master
-        with:
-          scanMetadataReportFile: .scannerwork/report-task.txt
-        env:
-           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #- uses: sonarsource/sonarqube-quality-gate-action@master
+      #  with:
+      #    scanMetadataReportFile: .scannerwork/report-task.txt
+      #  env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
